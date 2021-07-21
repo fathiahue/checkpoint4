@@ -1,0 +1,31 @@
+body{
+    background-color: #EBDEF0;
+}
+.title{
+    h1{
+        font-size: 300%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        color:brown ;
+    }
+}
+
+.bref{
+h2 { 
+    text-align: center;
+    color: rgb(93, 93, 95);
+   
+    }
+}
+.resumer{
+    p {
+        display: flex;
+        text-align: center;
+        margin-left: 15%;
+    }
+}
+.picture {
+    margin-top: 5%;
+    margin-left:30%;
+
+}

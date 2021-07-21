@@ -1,20 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Petite Annonces{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/soussi/checkpoint4/checkpoint4/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/soussi/checkpoint4/checkpoint4/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
+<h2>Ala Une</h2>
+
+<div class="cardi">
+    <img src="{{asset('/build/images/demenagement.9e1bc915.jpg') }}" alt="">
+  <div class="container">
+    <h4><b>John Doe</b></h4> 
+    <p>Urgent/Démenagement</p> 
+  </div>
 </div>
+
 {% endblock %}

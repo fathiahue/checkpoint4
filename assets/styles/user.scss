@@ -1,5 +1,34 @@
-.cardi img{
-    width: 20%;
-    display: block;
-    background-color: brown;
+.card{
+    margin-left: 2%;
+    margin-right: 2%;
 }
+
+.block {
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+   
+
+}
+h3{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 300%;
+    
+}
+.block2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+

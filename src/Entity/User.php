@@ -47,6 +47,16 @@ class User
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $civilité;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $password;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +130,30 @@ class User
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCivilité(): ?string
+    {
+        return $this->civilité;
+    }
+
+    public function setCivilité(string $civilité): self
+    {
+        $this->civilité = $civilité;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
     }

@@ -2,14 +2,13 @@
 
 {% block body %}
     {{ form_start(form) }}
-    {{ form_label(form.message) }}
-        {{ form_widget(form.message) }}
-        {{ form_label(form.nom) }}
-        {{ form_widget(form.nom) }}
-        {{ form_label(form.user) }}
-        {{ form_widget(form.user) }}
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+   
         {{ form_label(form.email) }}
         {{ form_widget(form.email) }}
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
         {{ form_rest(form) }}
         <button type="submit">Enregistrer</button>
     {{ form_end(form) }}

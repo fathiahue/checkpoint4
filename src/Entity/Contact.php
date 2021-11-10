@@ -20,12 +20,7 @@ class Contact
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $message;
-
-    /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     */
-    private $user;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,35 +28,23 @@ class Contact
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $nom;
+    private $message;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getMessage(): ?string
+    public function getName(): ?string
     {
-        return $this->message;
+        return $this->name;
     }
 
-    public function setMessage(string $message): self
+    public function setName(string $name): self
     {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
+        $this->name = $name;
 
         return $this;
     }
@@ -78,14 +61,14 @@ class Contact
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getMessage(): ?string
     {
-        return $this->nom;
+        return $this->message;
     }
 
-    public function setNom(string $nom): self
+    public function setMessage(string $message): self
     {
-        $this->nom = $nom;
+        $this->message = $message;
 
         return $this;
     }

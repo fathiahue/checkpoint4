@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PublishannonceController!{% endblock %}
+
+{% block body %}
+<div class="title"><h1> Publier Votre Annonce  </h1></div>
+
+{{ form_start(form) }}
+{{ form_label(form.title) }}
+        {{ form_widget(form.title) }}</br>
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}</br>
+   
+        {{ form_label(form.mail) }}
+        {{ form_widget(form.mail) }}</br>
+        {{ form_label(form.telephone) }}
+        {{ form_widget(form.telephone) }}</br>
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}</br>
+{{ form_rest(form) }}
+        <button type="submit">Enregistrer</button>
+    {{ form_end(form) }}
+{% endblock %}

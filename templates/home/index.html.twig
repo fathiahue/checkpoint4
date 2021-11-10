@@ -8,13 +8,25 @@
 <div class="picture">
     <img src="{{asset('/build/images/help.c354b350.jpg') }}"alt="">
 </div>
-<div class="bref"><h2> Bienvenue à Vous </h2></div>
+{% if not app.user %}
+
+<div class="bref"><h2>Bienvenue à Vous </h2></div>
+    <div class="resumer">
+        <p> Vous êtes une personne  altruiste , aimez  partager votre  savoir . Ce souciant de votre prochain.<br>
+            Alors vous êtes  au bonne endroit . Ce site met en relation une personne désirant être aider pour <br>divers services et 
+            une autre qui aura envie d'aider et qui voudra ce sentir utile.<br>
+            Il vous suffit pour cela de poster une annonce et/ou checker les annonces parues , pour apporter votre aide ou vous faire aider.
+        </p>
+    </div>
+</div>
+{% else %}
+<div class="bref"><h2> Bienvenue  {{ app.user.getFirstname }} </h2></div>
 <div class="resumer">
-    <p> Vous êtes une personne  altruiste , aimez  partager votre  savoir . Ce souciant de son prochain.<br>
+    <p> Vous êtes une personne  altruiste , aimez  partager votre  savoir . Ce souciant de votre prochain.<br>
         Alors vous êtes  au bonne endroit . Ce site met en relation une personne désirant être aider pour <br>divers services et 
         une autre qui aura envie d'aider et qui voudra ce sentir utile.<br>
         Il vous suffit pour cela de poster une annonce et/ou checker les annonces parues , pour apporter votre aide ou vous faire aider.
     </p>
 </div>
-
+{% endif %}
 {% endblock %}

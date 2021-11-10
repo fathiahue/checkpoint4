@@ -7,9 +7,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\ContactType;
 use App\Entity\Contact;
-use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
-
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 
 class ContactController extends AbstractController
 {
@@ -22,8 +23,16 @@ class ContactController extends AbstractController
         $form = $this->createForm(ContactType::class,$contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
-            $entityManager->persist($contact);
-        $entityManager->flush();
+            $contactFormData = $form->getData();
+            
+            $message = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to($this->getUser()->getEmail())
+                ->subject('vous avez reçu un email')
+                ->html($this->renderView('contact/index.html.twig', ['contact' => $contact]));
+            $mailer->send($message);
+            $this->addFlash('success', 'Vore message a été envoyé');
+            return $this->redirectToRoute('contact');
         }
         return $this->render('contact/index.html.twig', [
             'form' => $form->createView()

@@ -11,23 +11,52 @@
             <a class="nav-link active" aria-current="page" href="home">HelpMe</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="inscription">S'inscrire</a>
+            <a class="nav-link" href="register">S'inscrire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">S'identifier</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="user">Voir les Annonces</a>
+            <a class="nav-link" href="annonce">Voir les Annonces</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="publishannonce">Publier une Annonce</a>
+          </li>
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        {% if not app.user %}
+        <div class="dropdown">
+            <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{asset('/build/images/profile.12a139a0.png') }}" widht="10px" height="50px" alt="petite annonce"></a>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
+                {% if app.user %}
+                    {{ app.user.email }}
+                    <li><a class="dropdown-item " href="{{ path('app_logout') }}">Se deconnecter</a></li>
+                    {% else %}
+                    <li><a class="dropdown-item " href="{{ path('app_login') }}">S'identifier</a></li>
+             {% endif %}
+            </ul>
+          </div>
+          {% else %}
+          
+
+          <div class="dropdown">
+            <a class="btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ app.user.getFirstname }}</a>
+            </a>
+            {% endif %}
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
+                {% if app.user %}
+                    {{ app.user.email }}
+                    <li><a class="dropdown-item " href="{{ path('app_logout') }}">Se deconnecter</a></li>
+                    {% else %}
+                    <li><a class="dropdown-item " href="{{ path('app_login') }}">S'identifier</a></li>
+              {% endif %}
+            </ul>
+          </div>
       </div>
     </div>
   </nav>
+   
+  

@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Petite Annonces{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('Votre Annonce a bien été enregistrer') %}
+{% for message in messages %}
+        {{ message }}
+{% endfor %}
+{% endfor %}
+    </div>
+
+
+<h3>A la Une</h3>
+{% for annonces in annonce %}
+<div class="block">
+<div class="card border-dark mb-3" style="width:35rem;">
+    <img class="card-img-top"src="{{asset('/build/images/demenagement.9e1bc915.jpg') }}" alt="petite annonce">
+<div class="card-body">
+    <h4 class="card-title">{{ annonces.title }}</h4> 
+  <p class="card-text">{{ annonces.description }}</p>
+  <button id="myBtn">Voir</button>
+
+
+ 
+  <div id="myModal" class="modal">
+
+
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="block">
+        <div class="card border-dark mb-3" style="width:35rem;">
+            <img class="card-img-top"src="{{asset('/build/images/demenagement.9e1bc915.jpg') }}" alt="petite annonce">
+        <div class="card-body">
+            <h4 class="card-title">{{ annonces.title }}</h4> 
+          <p class="card-text">{{ annonces.description }}</p>
+          <p class="card-text">{{annonces.telephone }}</p>
+          <p class="card-text">{{annonces.mail }}</p>
+    </div>
+        </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% else %}
+        Aucune série trouvée.
+{% endfor %}
+     
+   <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+{% endblock %}

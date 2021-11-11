@@ -22,6 +22,7 @@ class PublishAnnonceType extends AbstractType
 
             ])
             ->add('telephone',IntegerType::class,[
+                'required' => false,
 
             ])
             ->add('mail',EmailType::class,[

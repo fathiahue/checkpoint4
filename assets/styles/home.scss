@@ -14,7 +14,6 @@ body{
 h2 { 
     text-align: center;
     color: rgb(93, 93, 95);
-   
     }
 }
 .resumer{
@@ -28,4 +27,25 @@ h2 {
     margin-top: 5%;
     margin-left:30%;
 
+}
+@media screen and (max-width: 850px){
+.picture {
+        img{
+            width: 200px;
+            margin-top: 5%;
+            margin-left:-15%;
+            }
+        }
+
+.bref {
+    h2{
+        margin-top:10%;
+    }
+}
+    .resumer{
+        p{
+            margin-left: 5%;
+        }
+    }
+        
 }

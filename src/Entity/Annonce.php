@@ -49,6 +49,8 @@ class Annonce
      */
     private $user;
 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,4 +129,5 @@ class Annonce
 
         return $this;
     }
+
 }

@@ -10,14 +10,16 @@
 <h3>A la Une</h3>
 {% for annonces in annonce %}
 {% if annonces.image is not empty %}
-<div class="card border-dark mb-3" style="width:35rem;">
+<div class="container">
+<div class="bloc" >
     <img src="{{ asset('uploads/files/' ~ annonces.image ~ ' ') }}" alt="petite annonce">
+    {{ annonces.title }}
+  {{ annonces.description }} </br>
+  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Telephone:{{annonces.telephone}} ou Email:{{annonces.mail}}" >Contacter</button>
+    
      {% endif %}
 
-<div class="card-body">
-    <h4 class="card-title">{{ annonces.title }}</h4> 
-  <p class="card-text">{{ annonces.description }}</p>
-  <button id="myBtn">Voir</button>
+
     
 </div>
   </div>
@@ -28,5 +30,10 @@
         Aucune série trouvée.
 {% endfor %}
         
-
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
 {% endblock %}

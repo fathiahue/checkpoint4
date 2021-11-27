@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\File\File;
 class PublishAnnonceController extends AbstractController
 {
     /**
-     * @Route("/publishannonce/", name="publishannonce")
+     * @Route("/publishannonce", name="publishannonce")
      */
     public function index(Request $request,EntityManagerInterface $entityManager,UserRepository $userRepository,FileUploader $fileUploader,SluggerInterface $slugger): Response
     {

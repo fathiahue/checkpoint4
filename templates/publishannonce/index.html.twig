@@ -5,19 +5,39 @@
 {% block body %}
 <div class="title"><h1> Publier Votre Annonce  </h1></div>
 
+    
 {{ form_start(form) }}
-{{ form_label(form.title) }}
-        {{ form_widget(form.title) }}</br>
-        {{ form_label(form.description) }}
-        {{ form_widget(form.description) }}</br>
-   
-        {{ form_label(form.mail) }}
-        {{ form_widget(form.mail) }}</br>
-        {{ form_label(form.telephone) }}
-        {{ form_widget(form.telephone) }}</br>
-        {{ form_label(form.image) }}
-        {{ form_widget(form.image) }}</br>
+<div class="titres">
+    {{ form_label(form.title) }}
+    {{ form_widget(form.title) }}</br>
+</div>
+
+<div class="description">
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description) }}</br>
+</div>
+
+<div class="mail">
+    {{ form_label(form.mail) }}
+    {{ form_widget(form.mail) }}</br>
+</div> 
+
+<div class="telephone">
+    {{ form_label(form.telephone) }}
+    {{ form_widget(form.telephone) }}</br>
+</div>
+
+<div class="image">
+    {{ form_label(form.image) }}
+    {{ form_widget(form.image) }}</br>
+</div>
 {{ form_rest(form) }}
+
+<div class="enregistrer">
         <button type="submit">Enregistrer</button>
+</div>
     {{ form_end(form) }}
+ </div>
+    
+
 {% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+<h4>Modification de L'annonce de  {{ app.user.lastname }} {{ app.user.firstname }} </h4>
+ 
+<img src="{{ asset('uploads/files/' ~ annonce.image ~ ' ') }}" alt="petite annonce">
+{{ form_rest(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}

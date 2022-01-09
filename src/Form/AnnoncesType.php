@@ -9,19 +9,21 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Validator\Constraints\File;
 
-class PublishAnnonceType extends AbstractType
+class AnnoncesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+     
         $builder
             ->add('title',TextType::class,[
-                'label' => 'Titre',
 
             ])
+
             ->add('telephone',IntegerType::class,[
                 'required' => false,
 
@@ -66,7 +68,12 @@ class PublishAnnonceType extends AbstractType
     
             ->add('description',TextareaType::class,[
                 'attr' => ['rows' => 6],
-            ])
+
+                ])
+
+            ->add('Valider',SubmitType::class,[
+                    ])
+            
             
         ;
     }

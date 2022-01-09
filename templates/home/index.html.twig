@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}HelpMe{% endblock %}
 
 {% block body %}
+{% for  message in app.flashes('success') %}
+    <div class="flash-success">
+    {{ message}}
+    </div>
+{% endfor %}
 <div class="title"><h1> HELPME </h1></div>
 
 <div class="picture">

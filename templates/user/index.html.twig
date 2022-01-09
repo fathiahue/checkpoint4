@@ -1,0 +1,26 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="description">
+<h4>Profil de {{ app.user.firstname }} {{ app.user.lastname }}</h4>
+    <div class=><strong>Nom:</strong>{{ app.user.firstname }}</div>
+    <div class=><strong>Prénom :</strong> {{ app.user.lastname }}</div>
+    <div class=><strong> Email :</strong>{{ app.user.email }}</div>
+    <div class=><strong>Mes Annonces :</strong> {{ app.user.annonces|length }}</div>
+    <a href="{{ path('edit_profil_user') }}" class="btn btn-sm btn-outline-secondary">Modifier le Profil</a>
+</div>
+</div>
+
+<div class="bloc">
+{% for annonce in app.user.annonces %}
+<div class="titre">{{ annonce.title }}</div>
+    <img src="{{ asset('uploads/files/' ~ annonce.image ~ ' ') }}" alt="petite annonce"></br></br>
+    <a href="{{ path('edit_annonce',{"id": annonce.id}) }}" class="btn btn-sm btn-outline-secondary">Modifier l'annonce</a></br>
+    
+    <a href="{{ path('annonce_delete',{"id": annonce.id}) }}" class="btn btn-sm btn-outline-secondary" onclick="return confirm('Attention votre article va être supprimer')">Supprimerl'annonce</a></br>
+   
+</div>
+{% endfor %}
+{% endblock %}
+

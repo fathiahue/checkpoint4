@@ -46,7 +46,7 @@ class PublishAnnonceController extends AbstractController
         $entityManager->flush();
         $annonceid = $annonce->getId();
         $this->addFlash('success', 'Vore annonce a été publier');
-        return $this->redirectToRoute('annonce');
+        return $this->redirectToRoute('home');
         }
         return $this->render('publishannonce/index.html.twig', [
             'user' => $user,

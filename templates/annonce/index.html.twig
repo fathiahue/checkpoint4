@@ -7,27 +7,38 @@
  
 
 
-<h3>A la Une</h3>
+<div class="titreclignotant">A la Une</div>
 {% for annonces in annonce %}
 {% if annonces.image is not empty %}
 <div class="container">
 <div class="bloc" >
-    <img src="{{ asset('uploads/files/' ~ annonces.image ~ ' ') }}" alt="petite annonce">
-    {{ annonces.title }}
-  {{ annonces.description }} </br>
-  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Telephone:{{annonces.telephone}} ou Email:{{annonces.mail}}" >Contacter</button>
+    <div class="titre">{{ annonces.title }}</div>
     
+    <img src="{{ asset('uploads/files/' ~ annonces.image ~ ' ') }}" alt="petite annonce">
+    <h5><u>Description</u></h5>
+    <div class="description">
+  {{ annonces.description }} </br></div></br>
+  <a href="#openModal" class="btn btn-sm btn-outline-dark">Coordonnées</a>
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Coordonnées </h2>
+   <p>Téléphone:{{annonces.telephone}}Email:{{annonces.mail}}"</p>
+</div>
+<a href="#close" title="Close" class="close">x</a>
+</div>
      {% endif %}
 
 
-    
+    </br>
 </div>
+
   </div>
 
 
 
 {% else %}
-        Aucune série trouvée.
+        Aucune annonce trouvée.
 {% endfor %}
         
 <script>

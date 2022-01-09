@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+<h4>Modification du Profil de {{ app.user.firstname }} {{ app.user.lastname }}</h4>
+ 
+
+{{ form_rest(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}
